@@ -1,22 +1,27 @@
 #include<stdlib.h>
 #include<stdio.h>
+
 void tk(int*, int*, int*);
 void pb(int,int,int*);
+
 int main(){
  int arr1[3][3], arr2[3][3], arr3[3][3], i, j;
- printf("請輸入矩陣一...\n");
- for(i=0;i<3;i++)
-  for(j=0;j<3;j++){
-   printf("m1[%d][%d]:",i,j);
-   scanf("%d",&arr1[i][j]);
+ 
+ printf("請輸入矩陣一...\n");  //輸入第一個矩陣
+ for(i = 0; i < 3; i++)
+  for(j = 0; j < 3; j++){
+   printf("m1[%d][%d]:", i, j);  
+   scanf("%d", &arr1[i][j]);
   }
- printf("請輸入矩陣二...\n");
- for(i=0;i<3;i++)
-  for(j=0;j<3;j++){
-   printf("m2[%d][%d]:",i,j);
-   scanf("%d",&arr2[i][j]);
+ 
+ printf("請輸入矩陣二...\n");  //輸入第二個矩陣
+ for(i = 0; i < 3; i++)
+  for(j = 0; j < 3; j++){
+   printf("m2[%d][%d]:", i, j);
+   scanf("%d", &arr2[i][j]);
   }
- tk(arr1[0],arr2[0],arr3[0]);
+ 
+ tk(arr1[0], arr2[0], arr3[0]);
  printf("\n矩陣一\n");
  pb(3,3,arr1[0]);
  printf("\n矩陣二\n");
@@ -26,12 +31,14 @@ int main(){
  system("PAUSE");
  return 0;
 }
+
 void tk(int* a1,int* a2,int* a3){
  int i;
  for(i=0;i<(3*3);i++){
-  *(a3+i) = *(a1+i)**(a2+i);
+  *(a3+i) = *(a1+i) * *(a2+i); //將兩個矩陣相乘
  }
 }
+
 void pb(int x,int y,int* d){
  int i, j;
  for(i=0;i<x;i++){
